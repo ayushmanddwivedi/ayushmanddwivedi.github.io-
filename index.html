@@ -2,117 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mono LaTeX Portfolio</title>
-  <!-- Fira Mono Font -->
-  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+  <title>Mono LaTeX Gallery</title>
+  <!-- Computer Modern Serif web font -->
+  <link href="https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css" rel="stylesheet">
   <!-- KaTeX for LaTeX rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js"
-      onload="renderMathInElement(document.body);"></script>
+    onload="renderMathInElement(document.body);"></script>
   <style>
     body {
-      background: #181818;
-      color: #e0e0e0;
-      font-family: 'Fira Mono', monospace;
+      background: #1a1a1a;
+      color: #ecf0f1;
+      font-family: 'Computer Modern Serif', serif;
       margin: 0;
-      padding: 0;
       min-height: 100vh;
     }
     .container {
-      max-width: 750px;
-      margin: 48px auto;
-      padding: 24px;
+      display: flex;
+      max-width: 1200px;
+      margin: 40px auto;
+      gap: 40px;
+    }
+    .maincontent {
+      flex: 3 1 0;
+    }
+    /* Responsive "gallery" grid for blocks */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
     }
     .block {
       background: #232323;
-      margin-bottom: 32px;
-      border-radius: 10px;
-      padding: 24px 32px;
-      box-shadow: 0 4px 24px rgba(20,20,20,0.4);
-      font-family: 'Fira Mono', monospace;
-    }
-    h1 {
-      font-size: 2.6em;
-      margin-bottom: 20px;
-      color: #FFA500;
-      letter-spacing: 2px;
-      font-family: 'Fira Mono', monospace;
-    }
-    h2 {
-      color: #79b8ff;
-      margin-bottom: 16px;
-      font-family: 'Fira Mono', monospace;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(30,30,30,0.4);
+      padding: 24px 30px;
+      font-size: 1.13em;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
     .socials {
-      margin-top: 48px;
       text-align: center;
+      margin: 34px 0 0 0;
     }
     .socials a {
-      color: #79b8ff;
+      color: #7fd8ff;
       text-decoration: none;
-      margin: 0 16px;
-      font-size: 1.2em;
+      margin: 0 13px;
+      font-size: 1.1em;
       transition: color 0.2s;
     }
     .socials a:hover {
-      color: #FFA500;
+      color: #f8d90f;
       text-decoration: underline;
     }
-    /* For KaTeX monospace look */
-    .katex {
-      font-family: 'Fira Mono', monospace !important;
-      font-size: 1.1em;
+    h1 {
+      font-size: 2.3em;
+      margin-bottom: 20px;
+      color: #FFD700;
+      font-family: 'Computer Modern Serif', serif;
+      letter-spacing: 1.6px;
+    }
+    h2 {
+      color: #7fd8ff;
+      margin-bottom: 7px;
+      font-family: 'Computer Modern Serif', serif;
     }
     .sub {
-      color: #B0B0B0;
+      color: #94a3b8;
       font-size: 0.98em;
+    }
+    /* Sidebar Styles */
+    .sidebar {
+      background: #20212b;
+      border-radius: 11px;
+      min-width: 200px;
+      padding: 26px 15px 28px 18px;
+      height: fit-content;
+      box-shadow: 0 2px 10px rgba(30,30,30,0.3);
+      flex: 1 0 220px;
+    }
+    .sidebar h3 {
+      color: #f8d90f;
+      margin-top: 0;
+      font-size: 1.15em;
+      letter-spacing: 0.04em;
+      font-family: 'Computer Modern Serif', serif;
+      margin-bottom: 15px;
+    }
+    ul.article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.article-list li {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #2d3240;
+      padding-bottom: 7px;
+      color: #b0eaff;
+      font-size: 1.05em;
+    }
+    ul.article-list span {
+      background: #28384A;
+      color: #f8d90f;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    ul.article-list a {
+      color: #b0eaff;
+      text-decoration: none;
+    }
+    ul.article-list a:hover {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; gap: 20px; }
+      .sidebar { min-width: unset; width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
+  <main class="maincontent">
     <h1>Elio Parallax</h1>
-    <div class="block">
-      <h2>01. Mission</h2>
-      <div>Building elegant equations and cohesive experiences.</div>
-      <div>Specializes in web development, interface design, and the math of pixels.</div>
-      <div><span class="sub">LaTeX sample:</span> <span class="latex">\(f(x) = x^{2} \sin x\)</span></div>
-    </div>
-    <div class="block">
-      <h2>02. Recent Work</h2>
-      <div>- UX lead for "Graphitique": <span class="sub">SVG-based math visualization tool</span></div>
-      <div>- Designer for "GeoFab": <span class="sub">parametric geometry platform</span></div>
-      <div><span class="sub">Sample: </span> <span class="latex">\(\lim_{n\rightarrow\infty} \frac{1}{n^2} = 0\)</span></div>
-    </div>
-    <div class="block">
-      <h2>03. Publications</h2>
-      <div>"Monospace for Modernists," <span class="sub">in Typesetters' Monthly, 2024</span></div>
-      <div>"The Synesthetic Web," <span class="sub">on Medium, 2025</span></div>
-      <div><span class="sub">Sample:</span> <span class="latex">\(E = mc^2\)</span></div>
-    </div>
-    <div class="block">
-      <h2>04. Tools & Stack</h2>
-      <div>TypeScript / React / Figma / KaTeX / NextJS</div>
-      <div>Preferred editor: Vim with monospaced theme</div>
-      <div><span class="sub">Inline LaTeX: </span> <span class="latex">\(\nabla \cdot \vec{F} = 0\)</span></div>
+    <div class="gallery">
+      <div class="block">
+        <h2>Mission</h2>
+        Building elegant equations and cohesive experiences.
+        <span class="sub">LaTeX: <span class="latex">\(f(x)=x^2\sin x\)</span></span>
+      </div>
+      <div class="block">
+        <h2>Recent Work</h2>
+        UX lead for <span class="sub">Graphitique: math visualization tool</span>.<br>
+        Designer for <span class="sub">GeoFab: parametric geometry platform</span>.
+        <span class="sub">LaTeX: <span class="latex">\(\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}\)</span></span>
+      </div>
+      <div class="block">
+        <h2>Publications</h2>
+        "Monospace for Modernists," <span class="sub">Typesetters' Monthly, 2024</span><br>
+        "The Synesthetic Web," <span class="sub">on Medium, 2025</span>
+        <span class="sub">LaTeX: <span class="latex">\(E=mc^2\)</span></span>
+      </div>
+      <div class="block">
+        <h2>Tools & Stack</h2>
+        TypeScript / React / Figma / KaTeX<br>
+        Editor: Vim, monospaced theme
+        <span class="sub">LaTeX: <span class="latex">\(\nabla\cdot\vec{F}=0\)</span></span>
+      </div>
     </div>
     <div class="socials">
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
-      <a href="https://behance.net/" target="_blank">Behance</a>
-      <a href="https://letterboxd.com/" target="_blank">Letterboxd</a>
-      <a href="https://substack.com/" target="_blank">Substack</a>
-      <a href="mailto:hi@elioparallax.com" target="_blank">Email</a>
+      <a href="#">Instagram</a> 
+      <a href="#">Behance</a> 
+      <a href="#">Letterboxd</a>
+      <a href="#">Substack</a>
+      <a href="mailto:hi@elioparallax.com">Email</a>
     </div>
-  </div>
-  <script>
-    renderMathInElement(document.body, {
+  </main>
+  <aside class="sidebar">
+    <h3>Articles</h3>
+    <ul class="article-list">
+      <li><span>1</span> <a href="#">Getting Started</a></li>
+      <li><span>2</span> <a href="#">Design & Math</a></li>
+      <li><span>3</span> <a href="#">Equations in Web</a></li>
+      <li><span>4</span> <a href="#">Creative Coding</a></li>
+      <li><span>5</span> <a href="#">Sidequest: Cinema in Equations</a></li>
+    </ul>
+  </aside>
+</div>
+<script>
+  renderMathInElement(document.body,{
       delimiters: [
-        {left: "\\(", right: "\\)", display: false},
-        {left: "\\[", right: "\\]", display: true}
+          {left: "\\(", right: "\\)", display: false},
+          {left: "\\[", right: "\\]", display: true}
       ]
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
-
