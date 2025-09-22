@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mono LaTeX Portfolio</title>
+  <!-- Fira Mono Font -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+  <!-- KaTeX for LaTeX rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body);"></script>
+  <style>
+    body {
+      background: #181818;
+      color: #e0e0e0;
+      font-family: 'Fira Mono', monospace;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 750px;
+      margin: 48px auto;
+      padding: 24px;
+    }
+    .block {
+      background: #232323;
+      margin-bottom: 32px;
+      border-radius: 10px;
+      padding: 24px 32px;
+      box-shadow: 0 4px 24px rgba(20,20,20,0.4);
+      font-family: 'Fira Mono', monospace;
+    }
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 20px;
+      color: #FFA500;
+      letter-spacing: 2px;
+      font-family: 'Fira Mono', monospace;
+    }
+    h2 {
+      color: #79b8ff;
+      margin-bottom: 16px;
+      font-family: 'Fira Mono', monospace;
+    }
+    .socials {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .socials a {
+      color: #79b8ff;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 1.2em;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: #FFA500;
+      text-decoration: underline;
+    }
+    /* For KaTeX monospace look */
+    .katex {
+      font-family: 'Fira Mono', monospace !important;
+      font-size: 1.1em;
+    }
+    .sub {
+      color: #B0B0B0;
+      font-size: 0.98em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Elio Parallax</h1>
+    <div class="block">
+      <h2>01. Mission</h2>
+      <div>Building elegant equations and cohesive experiences.</div>
+      <div>Specializes in web development, interface design, and the math of pixels.</div>
+      <div><span class="sub">LaTeX sample:</span> <span class="latex">\(f(x) = x^{2} \sin x\)</span></div>
+    </div>
+    <div class="block">
+      <h2>02. Recent Work</h2>
+      <div>- UX lead for "Graphitique": <span class="sub">SVG-based math visualization tool</span></div>
+      <div>- Designer for "GeoFab": <span class="sub">parametric geometry platform</span></div>
+      <div><span class="sub">Sample: </span> <span class="latex">\(\lim_{n\rightarrow\infty} \frac{1}{n^2} = 0\)</span></div>
+    </div>
+    <div class="block">
+      <h2>03. Publications</h2>
+      <div>"Monospace for Modernists," <span class="sub">in Typesetters' Monthly, 2024</span></div>
+      <div>"The Synesthetic Web," <span class="sub">on Medium, 2025</span></div>
+      <div><span class="sub">Sample:</span> <span class="latex">\(E = mc^2\)</span></div>
+    </div>
+    <div class="block">
+      <h2>04. Tools & Stack</h2>
+      <div>TypeScript / React / Figma / KaTeX / NextJS</div>
+      <div>Preferred editor: Vim with monospaced theme</div>
+      <div><span class="sub">Inline LaTeX: </span> <span class="latex">\(\nabla \cdot \vec{F} = 0\)</span></div>
+    </div>
+    <div class="socials">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://behance.net/" target="_blank">Behance</a>
+      <a href="https://letterboxd.com/" target="_blank">Letterboxd</a>
+      <a href="https://substack.com/" target="_blank">Substack</a>
+      <a href="mailto:hi@elioparallax.com" target="_blank">Email</a>
+    </div>
+  </div>
+  <script>
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  </script>
+</body>
+</html>
+
